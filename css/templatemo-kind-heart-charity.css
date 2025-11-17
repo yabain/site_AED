@@ -207,10 +207,16 @@ strong {
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .custom-block-wrap:hover {
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+
+  .custom-btn{
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
 }
 
 .custom-block-body {
