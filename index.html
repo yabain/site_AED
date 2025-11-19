@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" type="image/png" href="https://aed.yaba-in.com/images/aed/logo AED.png" />
-    <title>AED - 2025</title>
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" type="image/png" href="https://aed.yaba-in.com/images/aed/logo AED.png" />
+  <title>AED - 2025</title>
   <link rel="icon" type="image/png" href="https://aed.yaba-in.com/images/aed/logo AED.png" />
   <meta property="og:image" content="https://aed.yaba-in.com/images/aed/logo AED.png">
   <meta property="og:image:type" content="image/png">
@@ -20,13 +20,103 @@
   <meta property="description"
     content="Association pour l'Éducation et le Développement (AED) - Promouvoir l'accès à une éducation de qualité et au développement communautaire au Cameroun." />
 
-    <!-- CSS FILES -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS FILES -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet" />
 
-    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Animations au scroll + navbar dynamique -->
+  <style>
+    :root {
+      --animate-delay: 0s;
+    }
 
-    <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet" />
-    <!--
+    /* === ANIMATIONS AU SCROLL - ÉTAT INITIAL === */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+      will-change: opacity, transform;
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Variantes */
+    [data-animate="fade-left"] {
+      transform: translateX(-40px);
+    }
+
+    [data-animate="fade-right"] {
+      transform: translateX(40px);
+    }
+
+    [data-animate="fade-up"] {
+      transform: translateY(40px);
+    }
+
+    [data-animate="fade-down"] {
+      transform: translateY(-40px);
+    }
+
+    [data-animate="zoom-in"] {
+      transform: scale(0.9);
+    }
+
+    [data-animate="zoom-in"].is-visible {
+      transform: scale(1);
+    }
+
+    [data-animate][data-delay] {
+      transition-delay: var(--animate-delay, 0s);
+    }
+
+    /* Navbar qui change au scroll */
+    .navbar.navbar-scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    }
+
+    .navbar.navbar-scrolled .navbar-brand img.logo {
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo {
+      height: 80px;
+      max-width: 180px;
+      object-fit: contain;
+      filter: grayscale(0.02);
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-6px) scale(1.03);
+      filter: none;
+    }
+
+    @media (max-width: 576px) {
+      .partner-logo {
+        height: 56px;
+        max-width: 120px;
+        margin: 0.25rem 0.5rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .partner-logo {
+        height: 96px;
+        max-width: 220px;
+      }
+    }
+  </style>
+
+  <!--
 
 TemplateMo 581 Kind Heart Charity
 
@@ -36,823 +126,616 @@ https://templatemo.com/tm-581-kind-heart-charity
 </head>
 
 <body id="section_1">
-    <header class="site-header">
-        <div class="container">
+  <header class="site-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-12 d-flex flex-wrap">
+          <p class="d-flex me-4 mb-0">
+            <i style="color: var(--primary-color);" class="bi-geo-alt me-2"></i>
+            Bangangté, Banekane
+          </p>
+
+          <p class="d-flex mb-0">
+            <i style="color: var(--primary-color);" class="bi-envelope me-2"></i>
+            <a href="mailto:info@udm.aed-cm.org"> info@udm.aed-cm.org </a>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+          <ul class="social-icon">
+            <li class="social-icon-item">
+              <a href="#" class="social-icon-link bi-twitter"></a>
+            </li>
+            <li class="social-icon-item">
+              <a href="#" class="social-icon-link bi-facebook"></a>
+            </li>
+            <li class="social-icon-item">
+              <a href="#" class="social-icon-link bi-instagram"></a>
+            </li>
+            <li class="social-icon-item">
+              <a href="#" class="social-icon-link bi-youtube"></a>
+            </li>
+            <li class="social-icon-item">
+              <a href="#" class="social-icon-link bi-whatsapp"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/aed/logo AED.png" class="logo img-fluid" alt="Kind Heart Charity" />
+        <span class="desktop">
+          AED
+          <small>Association pour l'Éducation et le Développement</small>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link click-scroll" href="#top">Accueil</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link click-scroll" href="#section_2">à propos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link click-scroll" href="#section_3">Réalisation</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link click-scroll" href="#section_4">Devenir membre</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">Nous</a>
+
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="page_udm.html">UDM</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="page_cum.html">CUM</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="page_cmpm.html">CMPM</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="page_cev.html">CEV</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section hero-section-full-height" id="top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-12 p-0">
+            <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/aed/P012_01_2025_CO.JPG" class="carousel-image img-fluid d-block w-100"
+                    style="object-fit: cover; height: 600px" alt="..." />
+
+                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                    <h1 data-animate="fade-down">Association</h1>
+                    <p data-animate="fade-up" data-delay="0.15s">
+                      L’AED réunit des personnes engagées <br />
+                      pour l’éducation et la vie communautaire
+                    </p>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img src="images/aed/maxresdefault.jpg" class="carousel-image img-fluid d-block w-100"
+                    style="object-fit: cover; height: 600px" alt="..." />
+
+                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                    <h1 data-animate="fade-down">Développement</h1>
+                    <p data-animate="fade-up" data-delay="0.15s">
+                      Des infrastructures aux standards internationaux.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img src="images/aed/202030030_1376695999383164_4246865921148610090_n-1024x683.jpg"
+                    class="carousel-image img-fluid d-block w-100" style="object-fit: cover; height: 600px"
+                    alt="..." />
+
+                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                    <h1 data-animate="fade-down">Education</h1>
+                    <p data-animate="fade-up" data-delay="0.15s">
+                      L’AED veille à offrir une éducation de qualité pour tous.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <img src="images/aed/IMG-20230408-WA0001-1024x683.jpg"
+                    class="carousel-image img-fluid d-block w-100" style="object-fit: cover; height: 600px"
+                    alt="..." />
+
+                  <div class="carousel-caption d-flex flex-column justify-content-end">
+                    <h1 data-animate="fade-down">Coopération</h1>
+                    <p data-animate="fade-up" data-delay="0.15s">
+                      L’AED avance avec ses partenaires pour construire <br />
+                      des projets durables.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+
+              <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIENVENUE + 4 BLOCS -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-12 text-center mx-auto" data-animate="fade-up">
+            <h3 class="mb-5" style="color: #5a6f80">
+              Bienvenue à l'Association pour l'Éducation et le Développement
+            </h3>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0" data-animate="zoom-in">
+            <div class="featured-block d-flex justify-content-center align-items-center">
+              <a href="page_udm.html" class="d-block">
+                <img src="images/aed/logo_udm.png" class="w-50 featured-block-image img-fluid" alt="" />
+                <p class="featured-block-text">
+                  Université des Montagnes
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4" data-animate="zoom-in" data-delay="0.1s">
+            <div class="featured-block d-flex justify-content-center align-items-center">
+              <a href="page_cum.html" class="d-block">
+                <img src="images/aed/P001_03_2025_Logo_CUM.jpg" class="w-50 featured-block-image img-fluid" alt="" />
+                <p class="featured-block-text">
+                  Clinique Universitaire des Montagnes
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4" data-animate="zoom-in" data-delay="0.2s">
+            <div class="featured-block d-flex justify-content-center align-items-center">
+              <a href="page_cmpm.html" class="d-block">
+                <img src="images/aed/P001_04_2025_Logo_CMPM.png" class="w-25 featured-block-image img-fluid" alt="" />
+                <p class="featured-block-text">
+                  Centre des Métiers et des Professions des Montagnes
+                </p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0" data-animate="zoom-in" data-delay="0.3s">
+            <div class="featured-block d-flex justify-content-center align-items-center">
+              <a href="page_cev.html" class="d-block">
+                <img src="images/aed/logo_cev.png" class="w-40 featured-block-image img-fluid" alt="" />
+                <p class="featured-block-text">
+                  Centre d'Enseignements Virtuels
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTRE HISTOIRE -->
+    <section class="section-padding section-bg" id="section_2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-12 mb-5 mb-lg-0" data-animate="fade-right">
+            <img src="images/aed/P002_01_2025_AED_BE.JPG" class="custom-text-box-image img-fluid" alt="" />
+          </div>
+
+          <div class="col-lg-6 col-12" data-animate="fade-left">
+            <div class="custom-text-box">
+              <h2 class="mb-2">Notre Histoire</h2>
+              <h5 class="mb-3">
+                Association pour l'Éducation et le Développement
+              </h5>
+
+              <p class="mb-0">
+                Fondée en 1994, l’AED œuvre pour l’éducation et le
+                développement des compétences au Cameroun. Elle a créé l’UdM,
+                les CUM et le CMPM, alliant excellence académique et formation
+                professionnelle. Aujourd’hui, l’AED continue de former,
+                soutenir et inspirer les communautés pour construire un avenir
+                meilleur.
+              </p>
+            </div>
+
             <div class="row">
-                <div class="col-lg-8 col-12 d-flex flex-wrap">
-                    <p class="d-flex me-4 mb-0">
-                        <i style="color: var(--primary-color);"class="bi-geo-alt me-2"></i>
-                        Bangangté, Banekane
-                    </p>
+              <div class="col-lg-6 col-md-6 col-12" data-animate="fade-up" data-delay="0.1s">
+                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                  <div class="counter-thumb">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="256" data-speed="1000"></span>
+                      <span class="counter-number-text"> HA</span>
+                    </div>
+                    <span class="counter-text">DE SUPERFICIE</span>
+                  </div>
 
-                    <p class="d-flex mb-0">
-                        <i style="color: var(--primary-color);"class="bi-envelope me-2"></i>
+                  <div class="counter-thumb">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="17464" data-speed="1000"></span>
+                      <span class="counter-number-text"></span>
+                    </div>
+                    <span class="counter-text">Étudiant(e)s formé(e)s</span>
+                  </div>
 
-                        <a href="mailto:info@udm.aed-cm.org"> info@udm.aed-cm.org </a>
-                    </p>
+                  <div class="counter-thumb mt-4">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="199" data-speed="1000"></span>
+                      <span class="counter-number-text"></span>
+                    </div>
+                    <span class="counter-text">Salariés</span>
+                  </div>
                 </div>
+              </div>
 
-                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
-                    <ul class="social-icon">
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-twitter"></a>
-                        </li>
+              <div class="col-lg-6 col-md-6 col-12" data-animate="fade-up" data-delay="0.2s">
+                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                  <div class="counter-thumb">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="1050" data-speed="1000"></span>
+                      <span class="counter-number-text"></span>
+                    </div>
+                    <span class="counter-text">DOCTEURS</span>
+                  </div>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-facebook"></a>
-                        </li>
+                  <div class="counter-thumb">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="450" data-speed="1000"></span>
+                      <span class="counter-number-text"></span>
+                    </div>
+                    <span class="counter-text">LICENCES</span>
+                  </div>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-instagram"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-youtube"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-whatsapp"></a>
-                        </li>
-                    </ul>
+                  <div class="counter-thumb mt-4">
+                    <div class="d-flex">
+                      <span class="counter-number" data-from="1" data-to="40" data-speed="1000"></span>
+                      <span class="counter-number-text"></span>
+                    </div>
+                    <span class="counter-text">INGENIEURS ET MASTER</span>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </header>
 
-    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/aed/logo AED.png" class="logo img-fluid" alt="Kind Heart Charity" />
-                <span class="desktop">
-                    AED
-                    <small>Association pour l'Éducation et le Développement</small>
-                </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESIDENT -->
+    <section class="about-section section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-5 col-12" data-animate="fade-right">
+            <img src="images/aed/president_AED.jpg" class="about-image ms-lg-auto bg-light shadow-lg img-fluid"
+              alt="" />
+          </div>
+
+          <div class="col-lg-5 col-md-7 col-12" data-animate="fade-left">
+            <div class="custom-text-block pt-0">
+              <h2 class="mb-0">M. NJOMGANG HENRI</h2>
+              <h5 class="text-muted mb-lg-4 mb-md-4">Président de l'AED</h5>
+
+              <p>
+                L'Association pour l'Éducation et le Développe-ment (AED),
+                portée par l'Université des Montagnes (UdM), poursuit avec
+                détermination sa mission de promouvoir un accès élargi,
+                innovant et inclusif au savoir. Au cours de ces derniers mois,
+                notre institu-tion a renforcé sa présence sur la scène
+                académique en multipliant les partenariats structurants avec
+                des universités et des organismes étrangers. Ces
+                colla-borations ouvrent la voie à de nouvelles opportuni-tés
+                d'échanges, d'expertise et de mobilité, tout en consolidant la
+                qualité de notre offre de formation et de recherche.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section-padding section-bg">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-5 col-12 ms-auto" data-animate="fade-right">
+            <h2 class="mb-0">Agissez avec nous.</h2>
+            <h3 class="mb-0" style="color: #5a6f80">
+              Construisons ensemble un avenir meilleur.
+            </h3>
+          </div>
+
+          <div class="col-lg-5 col-12" data-animate="fade-left">
+            <a href="#section_4" class="custom-btn btn smoothscroll">
+              Nous rejoindre
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#top">Accueil</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_2">à propos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_3">Réalisation</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_4">Devenir membre</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link click-scroll dropdown-toggle" href="#section_5"
-                            id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">Nous</a>
-
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="page_udm.html">UDM</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="page_cum.html">CUM</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="page_cmpm.html">CMPM</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="page_cev.html">CEV</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_6">Contact</a>
-                    </li>
-
-                    <!-- <li class="nav-item ms-3">
-              <a
-                class="nav-link custom-btn custom-border-btn btn"
-                href="donate.html"
-                >Donate</a
-              >
-            </li> -->
-                </ul>
-            </div>
+          </div>
         </div>
-    </nav>
-
-    <main>
-        <section class="hero-section hero-section-full-height">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-12 p-0">
-                        <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/aed/P012_01_2025_CO.JPG"
-                                        class="carousel-image img-fluid d-block w-100"
-                                        style="object-fit: cover; height: 600px" alt="..." />
-
-                                    <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>Association</h1>
-
-                                        <p>
-                                            L’AED réunit des personnes engagées <br />
-                                            pour l’éducation et la vie communautaire
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="images/aed/maxresdefault.jpg"
-                                        class="carousel-image img-fluid d-block w-100"
-                                        style="object-fit: cover; height: 600px" alt="..." />
-
-                                    <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>Développement</h1>
-
-                                        <p>
-                                            Des infrastructures aux standards internationaux.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="images/aed/202030030_1376695999383164_4246865921148610090_n-1024x683.jpg"
-                                        class="carousel-image img-fluid d-block w-100"
-                                        style="object-fit: cover; height: 600px" alt="..." />
-
-                                    <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>Education</h1>
-
-                                        <p>
-                                            L’AED veille à offrir une éducation de qualité pour tous.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img src="images/aed/IMG-20230408-WA0001-1024x683.jpg"
-                                        class="carousel-image img-fluid d-block w-100"
-                                        style="object-fit: cover; height: 600px" alt="..." />
-
-                                    <div class="carousel-caption d-flex flex-column justify-content-end">
-                                        <h1>Coopération</h1>
-
-                                        <p>
-                                            L’AED avance avec ses partenaires pour construire <br />
-                                            des projets durables.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-
-                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-12 text-center mx-auto">
-                        <h3 class="mb-5" style="color: #5a6f80">
-                            Bienvenue à l'Association pour l'Éducation et le Développement
-                        </h3>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="page_udm.html" class="d-block">
-                                <img src="images/aed/logo_udm.png"
-                                    class="w-50 featured-block-image img-fluid" alt="" />
-
-                                <p class="featured-block-text">
-                                    Université des Montagnes
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                        <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="page_cum.html" class="d-block">
-                                <img src="images/aed/P001_03_2025_Logo_CUM.jpg"
-                                    class="w-50 featured-block-image img-fluid" alt="" />
-
-                                <p class="featured-block-text">
-                                    Clinique Universitaire des Montagnes
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
-                        <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="page_cmpm.html" class="d-block">
-                                <img src="images/aed/P001_04_2025_Logo_CMPM.png"
-                                    class="w-25 featured-block-image img-fluid" alt="" />
-
-                                <p class="featured-block-text">
-                                    Centre des Métiers et des Professions des Montagnes
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="page_cev.html" class="d-block">
-                                <img src="images/aed/logo_cev.png" class="w-40 featured-block-image img-fluid" alt="" />
-
-                                <p class="featured-block-text">
-                                    Centre d'Enseignements Virtuels
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding section-bg" id="section_2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-                        <img src="images/aed/P002_01_2025_AED_BE.JPG" class="custom-text-box-image img-fluid" alt="" />
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <div class="custom-text-box">
-                            <h2 class="mb-2">Notre Histoire</h2>
-
-                            <h5 class="mb-3">
-                                Association pour l'Éducation et le Développement
-                            </h5>
-
-                            <p class="mb-0">
-                                Fondée en 1994, l’AED œuvre pour l’éducation et le
-                                développement des compétences au Cameroun. Elle a créé l’UdM,
-                                les CUM et le CMPM, alliant excellence académique et formation
-                                professionnelle. Aujourd’hui, l’AED continue de former,
-                                soutenir et inspirer les communautés pour construire un avenir
-                                meilleur.
-                            </p>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
-                                    <div class="counter-thumb">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="256"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"> HA</span>
-                                        </div>
-
-                                        <span class="counter-text">DE SUPERFICIE</span>
-                                    </div>
-
-                                    <div class="counter-thumb">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="17464"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">Étudiant(e)s formé(e)s</span>
-                                    </div>
-
-                                    <div class="counter-thumb mt-4">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="199"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">Salariés</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
-                                    <div class="counter-thumb">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="1050"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">DOCTEURS</span>
-                                    </div>
-
-                                    <div class="counter-thumb">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="450"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">LICENCES</span>
-                                    </div>
-
-                                    <div class="counter-thumb mt-4">
-                                        <div class="d-flex">
-                                            <span class="counter-number" data-from="1" data-to="40"
-                                                data-speed="1000"></span>
-                                            <span class="counter-number-text"></span>
-                                        </div>
-
-                                        <span class="counter-text">INGENIEURS ET MASTER</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="about-section section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-5 col-12">
-                        <img src="images/aed/president_AED.jpg"
-                            class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="" />
-                    </div>
-
-                    <div class="col-lg-5 col-md-7 col-12">
-                        <div class="custom-text-block pt-0">
-                            <h2 class="mb-0">M. NJOMGANG HENRI</h2>
-
-                            <h5 class="text-muted mb-lg-4 mb-md-4">Président de l'AED</h5>
-
-                            <p>
-                                L'Association pour l'Éducation et le Développe-ment (AED),
-                                portée par l'Université des Montagnes (UdM), poursuit avec
-                                détermination sa mission de promouvoir un accès élargi,
-                                innovant et inclusif au savoir. Au cours de ces derniers mois,
-                                notre institu-tion a renforcé sa présence sur la scène
-                                académique en multipliant les partenariats structurants avec
-                                des universités et des organismes étrangers. Ces
-                                colla-borations ouvrent la voie à de nouvelles opportuni-tés
-                                d'échanges, d'expertise et de mobilité, tout en consolidant la
-                                qualité de notre offre de formation et de recherche.
-                            </p>
-
-                            <!-- <p>
-                  You are not allowed to redistribute this template ZIP file on
-                  any other template collection website. Please contact
-                  TemplateMo for more information.
-                </p> -->
-
-                            <!-- <ul class="social-icon mt-4">
-                  <li class="social-icon-item">
-                    <a href="#" class="social-icon-link bi-twitter"></a>
-                  </li>
-
-                  <li class="social-icon-item">
-                    <a href="#" class="social-icon-link bi-facebook"></a>
-                  </li>
-
-                  <li class="social-icon-item">
-                    <a href="#" class="social-icon-link bi-instagram"></a>
-                  </li>
-                </ul> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section section-padding section-bg">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-5 col-12 ms-auto">
-                        <h2 class="mb-0">Agissez avec nous.</h2>
-                        <h3 class="mb-0" style="color: #5a6f80">
-                            Construisons ensemble un avenir meilleur.
-                        </h3>
-                    </div>
-
-                    <div class="col-lg-5 col-12">
-                        <!-- <a href="#" class="me-4">Make a donation</a> -->
-
-                        <a href="#section_4" class="custom-btn btn smoothscroll">
-                            Nous rejoindre
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding" id="section_3">
-            <div class="container">
-                <div class="row">
-                    <!-- <div class="col-lg-12 col-12 text-center mb-4">
-              <h2>Nos réalisations</h2>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-              <div class="custom-block-wrap">
-                <img
-                  src="images/aed/logo_udm.png"
-                  class="custom-block-image img-fluid"
-                  alt=""
-                  style="width: 100%; height: 250px; object-fit: contain"
-                />
-
-                <div class="custom-block">
-                  <div class="custom-block-body">
-                    <h5 class="mb-3">Université des Montagnes</h5>
-
-                    <p>
-                      Offre une éducation de qualité, formant des étudiants
-                      compétents et engagés.
-                    </p>
-
-                    <div class="progress mt-4">
-                      <div
-                        class="progress-bar w-75"
-                        role="progressbar"
-                        aria-valuenow="75"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-
-                    <div class="d-flex align-items-center my-2">
-                      <p class="mb-0">
-                        <strong>Raised:</strong>
-                        $18,500
-                      </p>
-
-                      <p class="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $32,000
-                      </p>
-                    </div>
-                  </div>
-
-                  <a href="donate.html" class="custom-btn btn">Donate now</a>
-                  <a class="custom-btn"></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-              <div class="custom-block-wrap">
-                <img
-                  src="images/aed/P001_03_2025_Logo_CUM.jpg"
-                  class="custom-block-image img-fluid"
-                  alt=""
-                  style="width: 100%; height: 250px; object-fit: contain"
-                />
-
-                <div class="custom-block">
-                  <div class="custom-block-body">
-                    <h5 class="mb-3">Cliniques Universitaires des Montagnes</h5>
-
-                    <p>
-                      Combine soins de santé et formation pratique pour répondre
-                      aux besoins de la communauté.
-                    </p>
-
-                    <div class="progress mt-4">
-                      <div
-                        class="progress-bar w-50"
-                        role="progressbar"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-
-                    <div class="d-flex align-items-center my-2">
-                      <p class="mb-0">
-                        <strong>Raised:</strong>
-                        $27,600
-                      </p>
-
-                      <p class="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $60,000
-                      </p>
-                    </div>
-                  </div>
-
-                  <a href="donate.html" class="custom-btn btn">Donate now</a>
-                  <a class="custom-btn"></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12">
-              <div class="custom-block-wrap">
-                <img
-                  src="images/aed/P001_04_2025_Logo_CMPM.png"
-                  class="custom-block-image img-fluid"
-                  alt=""
-                  style="width: 100%; height: 250px; object-fit: contain"
-                />
-
-                <div class="custom-block">
-                  <div class="custom-block-body">
-                    <h5 class="mb-3">
-                      Centre des Métiers et des Professions des Montagnes
+      </div>
+    </section>
+
+    <!-- REALISATIONS / TIMELINE -->
+    <section class="section-padding" id="section_3">
+      <div class="container">
+        <div class="row">
+          <header class="mb-4 text-center" data-animate="fade-up">
+            <h2 class="fw-bold">Événements marquants de l’AED</h2>
+            <p class="text-muted mb-0">
+              Chronologie synthétique des étapes clés et réalisations.
+            </p>
+          </header>
+
+          <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item left" data-animate="fade-right">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <i style="color: var(--primary-color);" class="bi bi-building fs-3  me-3" title="Fondation"></i>
+                  <div class="w-100">
+                    <div class="timeline-date">1994</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Fondation de l'Association pour l'Éducation et le
+                      Développement (AED)
                     </h5>
-
-                    <p>
-                      Développe les compétences professionnelles pour préparer
-                      les jeunes au marché du travail.
-                    </p>
-
-                    <div class="progress mt-4">
-                      <div
-                        class="progress-bar w-100"
-                        role="progressbar"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-
-                    <div class="d-flex align-items-center my-2">
-                      <p class="mb-0">
-                        <strong>Raised:</strong>
-                        $84,600
-                      </p>
-
-                      <p class="ms-auto mb-0">
-                        <strong>Goal:</strong>
-                        $100,000
-                      </p>
-                    </div>
                   </div>
+                </div>
+                <p class="mb-0 text-muted small">.</p>
+              </div>
+            </div>
 
-                  <a href="donate.html" class="custom-btn btn">Donate now</a>
-                  <a class="custom-btn"></a>
+            <!-- Item 2 -->
+            <div class="timeline-item right" data-animate="fade-left">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <div class="w-100">
+                    <div class="timeline-date">2000</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Ouverture de l'Université des Montagnes (UdM)
+                    </h5>
+                  </div>
+                  <i style="color: var(--primary-color);" class="bi bi-mortarboard fs-3  ms-3" title="UdM"></i>
                 </div>
               </div>
-            </div> -->
-
-                    <header class="mb-4 text-center">
-                        <h2 class="fw-bold">Événements marquants de l’AED</h2>
-                        <p class="text-muted mb-0">
-                            Chronologie synthétique des étapes clés et réalisations.
-                        </p>
-                    </header>
-
-                    <div class="timeline">
-                        <!-- Item 1 -->
-                        <div class="timeline-item left">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <i style="color: var(--primary-color);"class="bi bi-building fs-3  me-3" title="Fondation"></i>
-                                    <div class="w-100">
-                                        <div class="timeline-date">1994</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Fondation de l'Association pour l'Éducation et le
-                                            Développement (AED)
-                                        </h5>
-                                    </div>
-                                </div>
-                                <p class="mb-0 text-muted small">.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="timeline-item right">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <div class="w-100">
-                                        <div class="timeline-date">2000</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Ouverture de l'Université des Montagnes (UdM)
-                                        </h5>
-                                    </div>
-                                    <i style="color: var(--primary-color);"class="bi bi-mortarboard fs-3  ms-3" title="UdM"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="timeline-item left">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <i style="color: var(--primary-color);"class="bi bi-hammer fs-3  me-3" title="Construction"></i>
-                                    <div class="w-100">
-                                        <div class="timeline-date">2003</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Démarrage des travaux de construction du premier
-                                            bâtiment des CUM.
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div class="timeline-item right">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <div class="w-100">
-                                        <div class="timeline-date">2005</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Signature d'une convention de coopération avec
-                                            l'Université d'Udine, Italie.
-                                        </h5>
-                                    </div>
-                                    <i style="color: var(--primary-color);"class="bi bi-globe fs-3  ms-3" title="Coopération"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 5 -->
-                        <div class="timeline-item left">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <i style="color: var(--primary-color);"class="bi bi-check-circle fs-3  me-3" title="Achèvement"></i>
-                                    <div class="w-100">
-                                        <div class="timeline-date">2006</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Fin des travaux de construction des CUM
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div class="timeline-item right">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <div class="w-100">
-                                        <div class="timeline-date">2014</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Élection des membres du Conseil d'orientation et du
-                                            Bureau Exécutif de l'AED.
-                                        </h5>
-                                    </div>
-                                    <i style="color: var(--primary-color);"class="bi bi-people fs-3  ms-3" title="Élection"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 7 -->
-                        <div class="timeline-item left">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <i style="color: var(--primary-color);"class="bi bi-tools fs-3  me-3" title="Modernisation"></i>
-                                    <div class="w-100">
-                                        <div class="timeline-date">2015</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Démarrage des travaux d'extension et de modernisation du
-                                            Campus de Banékané, Phase I.
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 8 -->
-                        <div class="timeline-item right">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <div class="w-100">
-                                        <div class="timeline-date">2019</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Ouverture du Complexe des Métiers et des Professions des
-                                            Montagnes (CMPM).
-                                        </h5>
-                                    </div>
-                                    <i style="color: var(--primary-color);"class="bi bi-door-open fs-3  ms-3" title="Ouverture"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 9 -->
-                        <div class="timeline-item left">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <i style="color: var(--primary-color);"class="bi bi-cpu fs-3  me-3" title="Technologie"></i>
-                                    <div class="w-100">
-                                        <div class="timeline-date">2023</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Signature de la tutelle des filières sciences
-                                            médico-sanitaires et biomédicales avec la Faculté des
-                                            Sciences de l'Université de Ngaoundéré.
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 10 -->
-                        <div class="timeline-item right">
-                            <div class="timeline-card">
-                                <div class="d-flex align-items-center justify-content-between mb-1">
-                                    <div class="w-100">
-                                        <div class="timeline-date">2025</div>
-                                        <h5 class="mt-1 mb-0" style="color: black;">
-                                            Signature de la tutelle entre la Faculté de sciences et
-                                            technologies de l'Université des Montagnes et
-                                            Polytechnique de Yaoundé.
-                                        </h5>
-                                    </div>
-                                    <i style="color: var(--primary-color);"class="bi bi-heart fs-3 ms-3" title="Santé"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.timeline -->
-                </div>
             </div>
-        </section>
 
-        <section class="volunteer-section section-padding" id="section_4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-4">Membres</h2>
-
-                        <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
-                            <h3 class="mb-4">Devenir membre aujourd’hui</h3>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <input type="text" name="volunteer-name" id="volunteer-name" class="form-control"
-                                        placeholder="Jack Doe" required />
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <input type="email" name="volunteer-email" id="volunteer-email"
-                                        pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com"
-                                        required />
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <input type="text" name="volunteer-subject" id="volunteer-subject"
-                                        class="form-control" placeholder="Subject" required />
-                                </div>
-
-                                <div class="col-lg-6 col-12">
-                                    <div class="input-group input-group-file">
-                                        <input type="file" class="form-control" id="inputGroupFile02" />
-
-                                        <label class="input-group-text" for="inputGroupFile02">Upload your CV</label>
-
-                                        <i style="color: var(--primary-color);"class="bi-cloud-arrow-up ms-auto"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message"
-                                placeholder="Comment (Optional)"></textarea>
-
-                            <button type="submit" class="form-control">Soumettre</button>
-                        </form>
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <img src="images/aed/devenir membre.png" class="volunteer-image img-fluid" alt="" />
-
-                        <div class="custom-block-body text-center">
-                            <h4 class="text-white mt-lg-3 mb-lg-3">Nos menbres</h4>
-
-                            <p class="text-white">
-                                Une équipe soudée au service de l’éducation et du
-                                développement. <br />
-                                Déposez votre candidature pour être membre
-                            </p>
-                        </div>
-                    </div>
+            <!-- Item 3 -->
+            <div class="timeline-item left" data-animate="fade-right">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <i style="color: var(--primary-color);" class="bi bi-hammer fs-3  me-3" title="Construction"></i>
+                  <div class="w-100">
+                    <div class="timeline-date">2003</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Démarrage des travaux de construction du premier
+                      bâtiment des CUM.
+                    </h5>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+
+            <!-- Item 4 -->
+            <div class="timeline-item right" data-animate="fade-left">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <div class="w-100">
+                    <div class="timeline-date">2005</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Signature d'une convention de coopération avec
+                      l'Université d'Udine, Italie.
+                    </h5>
+                  </div>
+                  <i style="color: var(--primary-color);" class="bi bi-globe fs-3  ms-3" title="Coopération"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline-item left" data-animate="fade-right">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <i style="color: var(--primary-color);" class="bi bi-check-circle fs-3  me-3" title="Achèvement"></i>
+                  <div class="w-100">
+                    <div class="timeline-date">2006</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Fin des travaux de construction des CUM
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="timeline-item right" data-animate="fade-left">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <div class="w-100">
+                    <div class="timeline-date">2014</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Élection des membres du Conseil d'orientation et du
+                      Bureau Exécutif de l'AED.
+                    </h5>
+                  </div>
+                  <i style="color: var(--primary-color);" class="bi bi-people fs-3  ms-3" title="Élection"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="timeline-item left" data-animate="fade-right">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <i style="color: var(--primary-color);" class="bi bi-tools fs-3  me-3" title="Modernisation"></i>
+                  <div class="w-100">
+                    <div class="timeline-date">2015</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Démarrage des travaux d'extension et de modernisation du
+                      Campus de Banékané, Phase I.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="timeline-item right" data-animate="fade-left">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <div class="w-100">
+                    <div class="timeline-date">2019</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Ouverture du Complexe des Métiers et des Professions des
+                      Montagnes (CMPM).
+                    </h5>
+                  </div>
+                  <i style="color: var(--primary-color);" class="bi bi-door-open fs-3  ms-3" title="Ouverture"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="timeline-item left" data-animate="fade-right">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <i style="color: var(--primary-color);" class="bi bi-cpu fs-3  me-3" title="Technologie"></i>
+                  <div class="w-100">
+                    <div class="timeline-date">2023</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Signature de la tutelle des filières sciences
+                      médico-sanitaires et biomédicales avec la Faculté des
+                      Sciences de l'Université de Ngaoundéré.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="timeline-item right" data-animate="fade-left">
+              <div class="timeline-card">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <div class="w-100">
+                    <div class="timeline-date">2025</div>
+                    <h5 class="mt-1 mb-0" style="color: black;">
+                      Signature de la tutelle entre la Faculté de sciences et
+                      technologies de l'Université des Montagnes et
+                      Polytechnique de Yaoundé.
+                    </h5>
+                  </div>
+                  <i style="color: var(--primary-color);" class="bi bi-heart fs-3 ms-3" title="Santé"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.timeline -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBRES -->
+    <section class="volunteer-section section-padding" id="section_4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-12" data-animate="fade-right">
+            <h2 class="text-white mb-4">Membres</h2>
+
+            <form class="custom-form volunteer-form mb-5 mb-lg-0" action="#" method="post" role="form">
+              <h3 class="mb-4">Devenir membre aujourd’hui</h3>
+
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <input type="text" name="volunteer-name" id="volunteer-name" class="form-control"
+                    placeholder="Jack Doe" required />
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <input type="email" name="volunteer-email" id="volunteer-email" pattern="[^ @]*@[^ @]*"
+                    class="form-control" placeholder="Jackdoe@gmail.com" required />
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <input type="text" name="volunteer-subject" id="volunteer-subject" class="form-control"
+                    placeholder="Subject" required />
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <div class="input-group input-group-file">
+                    <input type="file" class="form-control" id="inputGroupFile02" />
+                    <label class="input-group-text" for="inputGroupFile02">Upload your CV</label>
+                    <i style="color: var(--primary-color);" class="bi-cloud-arrow-up ms-auto"></i>
+                  </div>
+                </div>
+              </div>
+
+              <textarea name="volunteer-message" rows="3" class="form-control" id="volunteer-message"
+                placeholder="Comment (Optional)"></textarea>
+
+              <button type="submit" class="form-control">Soumettre</button>
+            </form>
+          </div>
+
+          <div class="col-lg-6 col-12" data-animate="fade-left">
+            <img src="images/aed/devenir membre.png" class="volunteer-image img-fluid" alt="" />
+
+            <div class="custom-block-body text-center">
+              <h4 class="text-white mt-lg-3 mb-lg-3">Nos menbres</h4>
+              <p class="text-white">
+                Une équipe soudée au service de l’éducation et du
+                développement. <br />
+                Déposez votre candidature pour être membre
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTENAIRES & NEWS SECTION CONTAINER -->
+    
 
         <section class="news-section section-padding" id="section_5">
             <div class="container">
@@ -1256,330 +1139,238 @@ https://templatemo.com/tm-581-kind-heart-charity
             </div>
         </section>
 
-        <section class="testimonial-section section-padding section-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="mb-lg-3">Quelque déclaration</h2>
+    <!-- TEMOIGNAGES -->
+    <section class="testimonial-section section-padding section-bg" data-animate="fade-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-12 mx-auto">
+            <h2 class="mb-lg-3">Quelque déclaration</h2>
 
-                        <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">
-                                            Durant cette année 2025, le renouvellement de la classe
-                                            dirigeante de l’UdM aura été l’un des chantiers majeurs
-                                            du BE.
-                                        </h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Thomas
-                                                TCHATCHOUA</span>, SGA</small>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">
-                                            L’AED met tout en œuvre pour achever ses projets dans
-                                            les délais, malgré les contraintes financières.
-                                        </h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">Théophile
-                                                YIMGAING MOYO</span>, CIE</small>
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <div class="carousel-caption">
-                                        <h4 class="carousel-title">
-                                            En parcourant les articulations du premier pilier de
-                                            l’AED, nous retenons l’Education et la santé, qui sont
-                                            prioritairement des œuvres sociales.
-                                        </h4>
-
-                                        <small class="carousel-name"><span class="carousel-name-title">M. NTOMANI Hugues
-                                                R. TIAKO</span>, Secrétaire Général de l’AED</small>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="carousel-item">
-                    <div class="carousel-caption">
-                      <h4 class="carousel-title">
-                        Sed leo nisl, posuere at molestie ac, suscipit auctor
-                        mauris quis metus tempor orci
-                      </h4>
-
-                      <small class="carousel-name"
-                        ><span class="carousel-name-title">Bob</span>,
-                        Entreprenuer</small
-                      >
-                    </div>
-                  </div> -->
-
-                                <ol class="carousel-indicators">
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
-                                        <img src="images/aed/sga_AED.png" class="img-fluid rounded-circle avatar-image"
-                                            alt="avatar" />
-                                    </li>
-
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
-                                        <img src="images/aed/CIE_AED.png" class="img-fluid rounded-circle avatar-image"
-                                            alt="avatar" />
-                                    </li>
-
-                                    <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
-                                        <img src="images/aed/secretaire_generale_AED.png"
-                                            class="img-fluid rounded-circle avatar-image" alt="avatar" />
-                                    </li>
-
-                                    <!-- <li
-                      data-bs-target="#testimonial-carousel"
-                      data-bs-slide-to="3"
-                      class=""
-                    >
-                      <img
-                        src="images/avatar/studio-portrait-emotional-happy-funny.jpg"
-                        class="img-fluid rounded-circle avatar-image"
-                        alt="avatar"
-                      />
-                    </li> -->
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section section-padding" id="section_6">
-            <div class="container">
-                <div class="row">
-                    <h2 class="text-center">Entrer en contact</h2>
-                    <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
-                        <img src="images/aed/contact.png" alt="" />
-                    </div>
-
-                    <div class="col-lg-5 col-12 mx-auto">
-                        <!-- <img src="images/aed/contact.png" alt=""> -->
-                        <div class="contact-info-wrap">
-                            <!-- <div class="contact-image-wrap d-flex flex-wrap">
-                  <img
-                    src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
-                    class="img-fluid avatar-image"
-                    alt=""
-                  />
-
-                  <div class="d-flex flex-column justify-content-center ms-3">
-                    <p class="mb-0">Clara Barton</p>
-                    <p class="mb-0"><strong>HR & Office Manager</strong></p>
-                  </div>
-                </div> -->
-
-                            <div class="contact-info">
-                                <h4 style="color: var(--primary-color)" class="mb-3">
-                                    Information de contact
-                                </h4>
-
-                                <h5 style="color: #5a6f80" class="d-flex mb-2">
-                                    <i style="color: var(--primary-color);"class="bi-geo-alt me-2"></i>
-                                    Bangangté, Banekane
-                                </h5>
-
-                                <h5 style="color: #5a6f80" class="d-flex mb-2">
-                                    <i style="color: var(--primary-color);"class="bi-telephone me-2"></i>
-
-                                    <a href="tel: 691 144 975"> 691 144 975 </a>/<a href="tel: 677 758 699">
-                                        677 758 699 </a>/<a href="tel: 243 025 141"> 243 025 141 </a>
-                                </h5>
-
-                                <h5 style="color: #5a6f80" class="d-flex">
-                                    <i style="color: var(--primary-color);"class="bi-envelope me-2"></i>
-
-                                    <a href="mailto:info@udm.aed-cm.org">
-                                        info@udm.aed-cm.org
-                                    </a>
-                                </h5>
-
-                                <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
-                            </div>
-                        </div>
-                        <!-- <form
-                class="custom-form contact-form"
-                action="#"
-                method="post"
-                role="form"
-              >
-                <h2>Contact form</h2>
-
-                <p class="mb-4">
-                  Or, you can just send an email:
-                  <a href="#">info@udm.aed-cm.org</a>
-                </p>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <input
-                      type="text"
-                      name="first-name"
-                      id="first-name"
-                      class="form-control"
-                      placeholder="Jack"
-                      required
-                    />
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <input
-                      type="text"
-                      name="last-name"
-                      id="last-name"
-                      class="form-control"
-                      placeholder="Doe"
-                      required
-                    />
+            <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="carousel-caption">
+                    <h4 class="carousel-title">
+                      Durant cette année 2025, le renouvellement de la classe
+                      dirigeante de l’UdM aura été l’un des chantiers majeurs
+                      du BE.
+                    </h4>
+                    <small class="carousel-name"><span class="carousel-name-title">Thomas
+                        TCHATCHOUA</span>, SGA</small>
                   </div>
                 </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  pattern="[^ @]*@[^ @]*"
-                  class="form-control"
-                  placeholder="Jackdoe@gmail.com"
-                  required
-                />
-
-                <textarea
-                  name="message"
-                  rows="5"
-                  class="form-control"
-                  id="message"
-                  placeholder="What can we help you?"
-                ></textarea>
-
-                <button type="submit" class="form-control">Send Message</button>
-              </form> -->
-                    </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <h4 class="carousel-title">
+                      L’AED met tout en œuvre pour achever ses projets dans
+                      les délais, malgré les contraintes financières.
+                    </h4>
+                    <small class="carousel-name"><span class="carousel-name-title">Théophile
+                        YIMGAING MOYO</span>, CIE</small>
+                  </div>
                 </div>
+
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <h4 class="carousel-title">
+                      En parcourant les articulations du premier pilier de
+                      l’AED, nous retenons l’Education et la santé, qui sont
+                      prioritairement des œuvres sociales.
+                    </h4>
+                    <small class="carousel-name"><span class="carousel-name-title">M. NTOMANI Hugues
+                        R. TIAKO</span>, Secrétaire Général de l’AED</small>
+                  </div>
+                </div>
+
+                <ol class="carousel-indicators">
+                  <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
+                    <img src="images/aed/sga_AED.png" class="img-fluid rounded-circle avatar-image" alt="avatar" />
+                  </li>
+                  <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1">
+                    <img src="images/aed/CIE_AED.png" class="img-fluid rounded-circle avatar-image" alt="avatar" />
+                  </li>
+                  <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2">
+                    <img src="images/aed/secretaire_generale_AED.png"
+                      class="img-fluid rounded-circle avatar-image" alt="avatar" />
+                  </li>
+                </ol>
+              </div>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-12 mb-4">
-                    <a href="#"><img src="images/aed/logo AED.png" class="logo img-fluid" alt="" /></a>
-                </div>
+    <!-- CONTACT -->
+    <section class="contact-section section-padding" id="section_6">
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center" data-animate="fade-up">Entrer en contact</h2>
 
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <h5 class="site-footer-title mb-3">Liens rapides</h5>
+          <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0" data-animate="fade-right">
+            <img src="images/aed/contact.png" alt="" />
+          </div>
 
-                    <ul class="footer-menu">
-                        <li class="footer-menu-item">
-                            <a href="#section_2" class="footer-menu-link">à propos</a>
-                        </li>
+          <div class="col-lg-5 col-12 mx-auto" data-animate="fade-left">
+            <div class="contact-info-wrap">
+              <div class="contact-info">
+                <h4 style="color: var(--primary-color)" class="mb-3">
+                  Information de contact
+                </h4>
 
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-link">Nous</a>
-                        </li>
+                <h5 style="color: #5a6f80" class="d-flex mb-2">
+                  <i style="color: var(--primary-color);" class="bi-geo-alt me-2"></i>
+                  Bangangté, Banekane
+                </h5>
 
-                        <li class="footer-menu-item">
-                            <a href="#section_3" class="footer-menu-link">Réalisation</a>
-                        </li>
+                <h5 style="color: #5a6f80" class="d-flex mb-2">
+                  <i style="color: var(--primary-color);" class="bi-telephone me-2"></i>
+                  <a href="tel: 691 144 975"> 691 144 975 </a> /
+                  <a href="tel: 677 758 699"> 677 758 699 </a> /
+                  <a href="tel: 243 025 141"> 243 025 141 </a>
+                </h5>
 
-                        <!-- <li class="footer-menu-item">
-                <a href="#" class="footer-menu-link">Become a volunteer</a>
-              </li>
-
-              <li class="footer-menu-item">
-                <a href="#" class="footer-menu-link">Partner with us</a>
-              </li> -->
-                        <a href="#section_4" class="custom-btn btn mt-3">Nous rejoindre</a>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12 mx-auto">
-                    <h5 class="site-footer-title mb-3">Information de contact</h5>
-
-                    <p class="text-white d-flex mb-2">
-                        <i style="color: var(--primary-color);"class="bi-telephone me-2"></i>
-                        <a href="tel: 691 144 975" class="site-footer-link">
-                            691 144 975 </a>/<a href="tel: 677 758 699" class="site-footer-link">
-                            677 758 699 </a>/<a href="tel: 243 025 141" class="site-footer-link">
-                            243 025 141
-                        </a>
-                    </p>
-
-                    <p class="text-white d-flex">
-                        <i style="color: var(--primary-color);"class="bi-envelope me-2"></i>
-
-                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                            info@udm.aed-cm.org
-                        </a>
-                    </p>
-
-                    <p class="text-white d-flex mt-3">
-                        <i style="color: var(--primary-color);"class="bi-geo-alt me-2"></i>
-                        Bangangté, Banekane
-                    </p>
-
-                    <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
-                </div>
+                <h5 style="color: #5a6f80" class="d-flex">
+                  <i style="color: var(--primary-color);" class="bi-envelope me-2"></i>
+                  <a href="mailto:info@udm.aed-cm.org">
+                    info@udm.aed-cm.org
+                  </a>
+                </h5>
+              </div>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-12 mb-4">
+          <a href="#"><img src="images/aed/logo AED.png" class="logo img-fluid" alt="" /></a>
         </div>
 
-        <div class="site-footer-bottom">
-            <div class="container d-flex justify-content-center">
-                <div class="row w-100">
-                    <div class="col-lg-6 col-md-7 col-12 w-100">
-                        <p class="copyright-text mb-0 text-center">
-                            Copyright © 2025
-                            <a href="#">Association pour l'Éducation et le Développement</a>
-                            <!-- <a href="https://templatemo.com" target="_blank">TemplateMo</a> -->
-                        </p>
-                    </div>
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+          <h5 class="site-footer-title mb-3">Liens rapides</h5>
 
-                    <!-- <div
-              class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto"
-            >
-              <ul class="social-icon">
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-twitter"></a>
-                </li>
+          <ul class="footer-menu">
+            <li class="footer-menu-item">
+              <a href="#section_2" class="footer-menu-link">à propos</a>
+            </li>
 
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-facebook"></a>
-                </li>
+            <li class="footer-menu-item">
+              <a href="#section_5" class="footer-menu-link">Nous</a>
+            </li>
 
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-instagram"></a>
-                </li>
+            <li class="footer-menu-item">
+              <a href="#section_3" class="footer-menu-link">Réalisation</a>
+            </li>
 
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-linkedin"></a>
-                </li>
-
-                <li class="social-icon-item">
-                  <a
-                    href="https://youtube.com/templatemo"
-                    class="social-icon-link bi-youtube"
-                  ></a>
-                </li>
-              </ul>
-            </div> -->
-                </div>
-            </div>
+            <a href="#section_4" class="custom-btn btn mt-3">Nous rejoindre</a>
+          </ul>
         </div>
-    </footer>
 
-    <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/click-scroll.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+        <div class="col-lg-4 col-md-6 col-12 mx-auto">
+          <h5 class="site-footer-title mb-3">Information de contact</h5>
+
+          <p class="text-white d-flex mb-2">
+            <i style="color: var(--primary-color);" class="bi-telephone me-2"></i>
+            <a href="tel: 691 144 975" class="site-footer-link">
+              691 144 975
+            </a> /
+            <a href="tel: 677 758 699" class="site-footer-link">
+              677 758 699
+            </a> /
+            <a href="tel: 243 025 141" class="site-footer-link">
+              243 025 141
+            </a>
+          </p>
+
+          <p class="text-white d-flex">
+            <i style="color: var(--primary-color);" class="bi-envelope me-2"></i>
+            <a href="mailto:info@udm.aed-cm.org" class="site-footer-link">
+              info@udm.aed-cm.org
+            </a>
+          </p>
+
+          <p class="text-white d-flex mt-3">
+            <i style="color: var(--primary-color);" class="bi-geo-alt me-2"></i>
+            Bangangté, Banekane
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <div class="container d-flex justify-content-center">
+        <div class="row w-100">
+          <div class="col-lg-6 col-md-7 col-12 w-100">
+            <p class="copyright-text mb-0 text-center">
+              Copyright © 2025
+              <a href="#">Association pour l'Éducation et le Développement</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/click-scroll.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/custom.js"></script>
+
+  <!-- Script animations au scroll + navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const animatedElements = document.querySelectorAll('[data-animate]');
+
+      if (!('IntersectionObserver' in window)) {
+        animatedElements.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.2
+      };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const delay = el.getAttribute('data-delay');
+            if (delay) {
+              el.style.setProperty('--animate-delay', delay);
+            }
+            el.classList.add('is-visible');
+            obs.unobserve(el);
+          }
+        });
+      }, observerOptions);
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+
+      if (window.scrollY > 60) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+  </script>
 </body>
 
 </html>
