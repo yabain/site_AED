@@ -1749,6 +1749,9 @@ blockquote::before {
     left: 8px;
     transform: none;
   }
+  .desktop {
+    display: none !important;
+  }
 }
 
 .banner {
