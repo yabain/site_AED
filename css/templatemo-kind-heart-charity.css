@@ -379,7 +379,7 @@ strong {
 .navbar-expand-lg .navbar-nav .nav-link {
   margin-right: 0;
   margin-left: 0;
-  padding: 20px;
+  padding: 10px;
 }
 
 .navbar-nav .nav-link {
@@ -772,7 +772,7 @@ strong {
   NEWS         
 -----------------------------------------*/
 .news-detail-header-section {
-  background-image: url("../images/news/close-up-volunteer-oganizing-stuff-donation.jpg");
+  background-image: url("../images/aed/banner_projet.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
