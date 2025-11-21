@@ -222,7 +222,12 @@ https://templatemo.com/tm-581-kind-heart-charity
     </section>
 
     <main>
-         <iframe id="iFrame" src="test.html" style="width:100%; border:none;"></iframe>
+         <iframe id="iFrame" src="test.html" style="width:100%; border:none;" class="desktop"
+        height="5200"
+        scrolling="no"></iframe>
+         <iframe id="iFrame" src="test.html" style="width:100%; border:none;" class="mobile"
+        height="10750"
+        scrolling="no"></iframe>
 
         <!-- <section class="news-detail-header-section text-center">
             <div class="section-overlay"></div>
@@ -238,7 +243,7 @@ https://templatemo.com/tm-581-kind-heart-charity
             </div>
         </section> -->
 
-        <section class="featured" id="featured" style="background-color: #fff !important">
+        <section class="featured desktop" id="featured" style="background-color: #fff !important">
             <div class="featured-container">
                 <div class="featured-hero">
                     <div class="featured-content">
@@ -282,7 +287,7 @@ https://templatemo.com/tm-581-kind-heart-charity
                         <div class="news-block">
                             <div class="news-block-top">
                                 <a>
-                                    <img style="width: 100%; height: 100%;" src="images/aed/Haut_Nkam.png"
+                                    <img style="width: 100%; height: 100%;" src="images/aed/haut_nkam.png"
                                         class="news-image img-fluid" alt="">
                                 </a>
 
@@ -432,7 +437,7 @@ https://templatemo.com/tm-581-kind-heart-charity
                                 </div>
 
                                 <div class="news-block-title mb-2">
-                                    <h4><a href="#" class="news-block-title-link">Campus Mifi</a>
+                                    <h4><a href="#" class="news-block-title-link">Campus de la Mifi</a>
                                     </h4>
                                 </div>
 
@@ -1216,15 +1221,6 @@ https://templatemo.com/tm-581-kind-heart-charity
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/templatemo-noir-scripts.js"></script>
-<script>
-  const iframe = document.getElementById('iFrame');
-
-  iframe.addEventListener('load', () => {
-    const doc = iframe.contentWindow.document;
-    const height = doc.body.scrollHeight;
-    iframe.style.height = height + 'px';  // l’iframe s’ajuste à son contenu
-  });
-</script>
 </body>
 
 </html>

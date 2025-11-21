@@ -1754,6 +1754,12 @@ blockquote::before {
   }
 }
 
+@media (min-width: 767.98px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
 .banner {
   background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("../images/aed/personnel_udm.png") center/cover no-repeat;
