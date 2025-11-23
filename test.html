@@ -82,7 +82,7 @@
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                <button class="btn-ghost" onclick="alert('Le programme sera bientôt disponible.');">
+                                <button class="btn-ghost" onclick="downloadRapport()">
                                     Télécharger le programme officiel (PDF)
                                 </button>
                             </div>
@@ -185,11 +185,11 @@
                                 <div class="number-card">
                                     <strong>+04</strong> Plateformes diasporiques (Europe, Amérique, Afrique, Canada)
                                 </div>
+                                <!-- <div class="number-card">
+                                    <strong>+2050</strong> Budget global prévisionnel 2025-2030
+                                </div> -->
                                 <div class="number-card">
-                                    <strong>≈ 292 M€</strong> Budget global prévisionnel 2025-2030
-                                </div>
-                                <div class="number-card">
-                                    <strong>+10000</strong>Étudiants formés d’ici 2030
+                                    <strong>+100000</strong>Étudiants formés d’ici 2030
                                 </div>
                             </div>
                         </div>
@@ -429,7 +429,7 @@
                         <h2 class="section-title">Une stratégie mixte et innovante pour financer AED-2030</h2>
                         <p class="section-subtitle">
                             L’AED mise sur les ressources internes, les partenaires internationaux, la diaspora et les
-                            financements innovants pour sécuriser un budget global d’environ 292&nbsp;M€.
+                            financements innovants.
                         </p>
                     </div>
 
@@ -441,7 +441,7 @@
                                 <div class="finance-row">
                                     <div class="finance-row-header">
                                         <span>1&nbsp;% du budget SND30</span>
-                                        <span>≈ 150&nbsp;M€ – 51,4&nbsp;%</span>
+                                        <span>≈ 51,4&nbsp;%</span>
                                     </div>
                                     <div class="finance-bar-track">
                                         <div class="finance-bar-fill" data-width="51.4"></div>
@@ -450,7 +450,7 @@
                                 <div class="finance-row">
                                     <div class="finance-row-header">
                                         <span>Fondation BRIDGIN</span>
-                                        <span>≈ 125&nbsp;M€ – 42,8&nbsp;%</span>
+                                        <span>≈ 42,8&nbsp;%</span>
                                     </div>
                                     <div class="finance-bar-track">
                                         <div class="finance-bar-fill" data-width="42.8"></div>
@@ -459,7 +459,7 @@
                                 <div class="finance-row">
                                     <div class="finance-row-header">
                                         <span>Ressources des projets (UdM, CUM, CMPM…)</span>
-                                        <span>≈ 15&nbsp;M€ – 5,1&nbsp;%</span>
+                                        <span>≈ 5,1&nbsp;%</span>
                                     </div>
                                     <div class="finance-bar-track">
                                         <div class="finance-bar-fill" data-width="5.1"></div>
@@ -467,20 +467,20 @@
                                 </div>
                                 <div class="finance-row">
                                     <div class="finance-row-header">
-                                        <span>Cotisations & partenariats privés</span>
-                                        <span>≈ 0,6&nbsp;M€</span>
+                                        <span>Diaspora & financements AFD/OCDE</span>
+                                        <span>≈ 0,6&nbsp;%</span>
                                     </div>
                                     <div class="finance-bar-track">
-                                        <div class="finance-bar-fill" data-width="0.2"></div>
+                                        <div class="finance-bar-fill" data-width="0.5"></div>
                                     </div>
                                 </div>
                                 <div class="finance-row">
                                     <div class="finance-row-header">
-                                        <span>Diaspora & financements AFD/OCDE</span>
-                                        <span>≈ 1,4&nbsp;M€</span>
+                                        <span>Cotisations & partenariats privés</span>
+                                        <span>≈ 0,1&nbsp;%</span>
                                     </div>
                                     <div class="finance-bar-track">
-                                        <div class="finance-bar-fill" data-width="0.5"></div>
+                                        <div class="finance-bar-fill" data-width="0.1"></div>
                                     </div>
                                 </div>
                             </div>
@@ -492,52 +492,48 @@
                                 <thead>
                                     <tr>
                                         <th>Axe</th>
-                                        <th>Budget (M€)</th>
+                                        <th>Budget (%)</th>
                                         <th>Source principale</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Gouvernance & transparence</td>
-                                        <td>2</td>
+                                        <td>0,7 %</td>
                                         <td>Cotisations AED, appui diasporas</td>
                                     </tr>
                                     <tr>
                                         <td>UdM Techno City</td>
-                                        <td>110</td>
+                                        <td>37,7 %</td>
                                         <td>Fondation BRIDGIN</td>
                                     </tr>
                                     <tr>
                                         <td>CUM – CHU moderne</td>
-                                        <td>15</td>
+                                        <td>1,7 %</td>
                                         <td>État, BRIDGIN</td>
                                     </tr>
                                     <tr>
                                         <td>CMPM – Emploi jeunes</td>
-                                        <td>5</td>
+                                        <td>5,1 %</td>
                                         <td>Fonds Emploi, entreprises</td>
                                     </tr>
                                     <tr>
                                         <td>Projets structurants</td>
-                                        <td>150</td>
+                                        <td>51,4 %</td>
                                         <td>1&nbsp;% SND30, BRIDGIN</td>
                                     </tr>
                                     <tr>
                                         <td>Communication & diaspora</td>
-                                        <td>5</td>
+                                        <td>1,7 %</td>
                                         <td>Sponsors, médias</td>
                                     </tr>
                                     <tr>
                                         <td>Inclusion & environnement</td>
-                                        <td>5</td>
+                                        <td>1,7 %</td>
                                         <td>Fonds AED-Genre, AFD</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p style="margin-top:0.6rem;font-size:0.8rem;color:var(--muted);">
-                                <strong>Total global :</strong> ≈ 292&nbsp;M€ – financements publics, privés et
-                                partenariats.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -722,6 +718,17 @@
     </div>
 
     <script src="js/projet.js"></script>
+    <script>
+        function downloadRapport() {
+        window.open('files/Refonder_pour_reussir.pdf', '_blank');
+            // const link = document.createElement('a');
+            // link.href = 'files/Refonder_pour_reussir.pdf';       // chemin vers votre fichier
+            // link.download = 'Refonder pour réussir.pdf';         // nom du fichier téléchargé
+            // document.body.appendChild(link);
+            // link.click();
+            // document.body.removeChild(link);
+        }
+    </script>
 </body>
 
 </html>
